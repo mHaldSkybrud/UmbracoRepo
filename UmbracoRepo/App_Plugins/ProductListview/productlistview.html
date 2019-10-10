@@ -1,7 +1,37 @@
-﻿<div ng-controller="My.ListViewProductsLayoutController as vm"
+﻿<!--
+<div ng-controller="My.ListViewProductsLayoutController as vm"
      ng-if="items">
 
     <div ng-repeat="item in items">
         <div>{{ item.productname }}</div>
     </div>
+</div>
+
+    ng-style="{'background-image': 'url(' + item.imageThumbnail + ')'}"
+
+-->
+
+
+
+<!--calls controller with this name, and then checks if an items exist.
+    if they do, each has the cards-css class added.-->
+<div ng-controller="My.ListView.ProductLayoutController as vn" 
+     ng-if="items"
+     class="my-products-layout__cards">
+
+    <div class="my-products-layout__card"
+         ng-repeat="item in items"
+         ng-class="{'selected': item.selected}"
+         ng-click="vm.toggleItem(item)" >
+
+        <div class="my-products-layout__overlay">
+            <div class="my-products-layout__price">${{ item.price }}.00</div>
+            <div class="my-products-layout__name">{{ item.productName }}</div>
+            <div class="my-products-layout__category">{{ item.category }}</div>
+        </div>
+
+        <div class="my-products-layout__button" ng-click="vm.clickItem(item)">View Product</div>
+
+    </div>
+
 </div>
