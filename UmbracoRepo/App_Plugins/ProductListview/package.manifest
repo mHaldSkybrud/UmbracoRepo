@@ -1,0 +1,8 @@
+﻿{
+  "javascript": [
+    "/App_Plugins/ProductListview/productlistview.controller.js"
+  ],
+  "css": [
+    "/App_Plugins/ProductListview/productlistview.css"
+  ]
+}
