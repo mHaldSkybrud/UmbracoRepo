@@ -34,7 +34,7 @@ namespace UmbracoExtendingEvents.Web.Components //.Web.Components is merely to s
 
         private void ContentService_Publishing(Umbraco.Core.Services.IContentService sender, Umbraco.Core.Events.ContentPublishingEventArgs e)
         {
-            //e.Cancel = true; --------- Wold make it impossible to publish content
+            e.Cancel = true; //--------- Would make it impossible to publish content
             foreach (var PublishedItem in e.PublishedEntities)
             {
                 _logger.Info<LogWhenPublishedComponent>(PublishedItem.Name + " Is about to be published.");
